@@ -1,9 +1,3 @@
-// =====================================================
-// MyMovieList – Shared App Logic (app.js)
-// TMDB API key: Replace with your own key from themoviedb.org
-// Get a free key at: https://www.themoviedb.org/settings/api
-// =====================================================
-
 const TMDB_KEY = 'acfb9ea58a3e65219d08463fa400b16c'; 
 const TMDB_BASE = 'https://api.themoviedb.org/3';
 const IMG_BASE  = 'https://image.tmdb.org/t/p/';
