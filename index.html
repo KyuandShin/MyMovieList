@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;700&family=Overpass+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">M</span>
+      <span class="logo-text">MyMovieList</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="watchlist.html">My List</a>
+      <a href="about-project.html">About</a>
+      <a href="developers.html">Developers</a>
+    </div>
+    <div class="nav-right">
+      <button class="icon-btn" id="searchToggle">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <div class="avatar-wrap">
+        <img src="https://api.dicebear.com/7.x/thumbs/svg?seed=movie" alt="avatar" class="avatar"/>
+      </div>
+    </div>
+  </nav>
+
+  <div class="search-overlay" id="searchOverlay">
+    <input type="text" id="searchInput" placeholder="Search movies…" autocomplete="off"/>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+
+  <div class="hero-section" id="heroSection">
+    <div class="hero-content">
+      <h1>Track every movie<br>you've ever watched.</h1>
+      <p>Discover, organize, and rate your movie journey. Powered by TMDB.</p>
+      <div class="hero-actions">
+        <a href="watchlist.html" class="btn-primary">Open My List</a>
+        <button class="btn-secondary" id="discoverBtn">Discover Movies</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="main-content">
+    <section class="section">
+      <div class="section-header">
+        <h2>Trending This Week</h2>
+        <span class="section-badge">TMDB</span>
+      </div>
+      <div class="movie-grid" id="trendingGrid">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Top Rated</h2>
+        <span class="section-badge">All Time</span>
+      </div>
+      <div class="movie-grid" id="topRatedGrid">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Now Playing</h2>
+        <span class="section-badge">In Theaters</span>
+      </div>
+      <div class="movie-grid" id="nowPlayingGrid">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="preview-card" id="previewCard">
+    <img id="previewImg" src="" alt=""/>
+    <div class="preview-info">
+      <h3 id="previewTitle"></h3>
+      <div class="preview-meta">
+        <span class="preview-score" id="previewScore"></span>
+        <span class="preview-year" id="previewYear"></span>
+      </div>
+      <p class="preview-overview" id="previewOverview"></p>
+      <button class="btn-add" id="previewAddBtn">+ Add to Watchlist</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Data provided by <a href="https://www.themoviedb.org" target="_blank">The Movie Database (TMDB)</a></p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="watchlist.html">My List</a>
+      <a href="about-project.html">About</a>
+      <a href="developers.html">Developers</a>
+    </nav>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

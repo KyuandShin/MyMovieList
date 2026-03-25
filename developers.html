@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Developers </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;700&family=Overpass+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">M</span>
+      <span class="logo-text">MyMovieList</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="watchlist.html">My List</a>
+      <a href="about-project.html">About</a>
+      <a href="developers.html" class="active">Developers</a>
+    </div>
+    <div class="nav-right">
+      <div class="avatar-wrap">
+        <img src="https://api.dicebear.com/7.x/thumbs/svg?seed=movie" alt="avatar" class="avatar"/>
+      </div>
+    </div>
+  </nav>
+
+  <div class="profile-banner dev-banner">
+    <div class="profile-banner-overlay"></div>
+  </div>
+
+  <div class="profile-identity">
+    <div class="profile-name-block" style="margin-left:2rem;">
+      <h1>The Development Team</h1>
+      <p class="profile-sub">The people behind MyMovieList</p>
+    </div>
+  </div>
+
+  <div class="profile-tabs">
+    <a href="#team" class="ptab active">Team</a>
+    <a href="#roles" class="ptab">Roles</a>
+    <a href="#contact" class="ptab">Contact</a>
+  </div>
+
+  <div class="dev-body">
+
+    <section id="team" class="dev-section">
+      <h2 class="dev-section-title">Group Members</h2>
+      <div class="dev-grid">
+
+        <!-- DEVELOPER 1 -->
+        <div class="dev-card">
+          <div class="dev-avatar-wrap">
+            <img src="https://api.dicebear.com/7.x/thumbs/svg?seed=alice&backgroundColor=1a1f2e" alt="Alice" class="dev-avatar"/>
+          </div>
+          <div class="dev-card-body">
+            <h3>Alice Reyes</h3>
+            <span class="dev-role-badge lead">Project Lead</span>
+            <p class="dev-desc">
+              Alice is the team lead and primary architect of MyMovieList. She designed the overall
+              system structure, UI/UX layout inspired by AniList, and coordinated tasks among the group.
+              She also handled API integration with TMDB and built the home page movie grid with hover previews.
+            </p>
+            <div class="dev-contributions">
+              <h4>Contributions</h4>
+              <ul>
+                <li>Project planning & task delegation</li>
+                <li>UI/UX design (AniList-inspired)</li>
+                <li>TMDB API integration</li>
+                <li>Home page & hover preview feature</li>
+                <li>Navbar & responsive layout</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- DEVELOPER 2 -->
+        <div class="dev-card">
+          <div class="dev-avatar-wrap">
+            <img src="https://api.dicebear.com/7.x/thumbs/svg?seed=ben&backgroundColor=1a1f2e" alt="Ben" class="dev-avatar"/>
+          </div>
+          <div class="dev-card-body">
+            <h3>Ben Santos</h3>
+            <span class="dev-role-badge frontend">Frontend Developer</span>
+            <p class="dev-desc">
+              Ben focused on the watchlist page, implementing the dynamic table rendering, filter/sort system,
+              and the add/edit modal with TMDB search integration. He also worked on localStorage persistence
+              and the statistics bar at the top of the list.
+            </p>
+            <div class="dev-contributions">
+              <h4>Contributions</h4>
+              <ul>
+                <li>Watchlist page (watchlist.html)</li>
+                <li>Dynamic table & list rendering</li>
+                <li>Filter, sort, and search logic</li>
+                <li>Add/Edit modal & form validation</li>
+                <li>LocalStorage data persistence</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- DEVELOPER 3 -->
+        <div class="dev-card">
+          <div class="dev-avatar-wrap">
+            <img src="https://api.dicebear.com/7.x/thumbs/svg?seed=clara&backgroundColor=1a1f2e" alt="Clara" class="dev-avatar"/>
+          </div>
+          <div class="dev-card-body">
+            <h3>Clara Mendoza</h3>
+            <span class="dev-role-badge content">Content & Documentation</span>
+            <p class="dev-desc">
+              Clara was responsible for the About the Project and Developers pages, writing all project
+              documentation, FAQ content, and feature descriptions. She also contributed to the styling,
+              ensuring consistency across pages and handling responsive CSS adjustments.
+            </p>
+            <div class="dev-contributions">
+              <h4>Contributions</h4>
+              <ul>
+                <li>About the Project page</li>
+                <li>Developers page</li>
+                <li>Project documentation & FAQ</li>
+                <li>CSS consistency & responsive fixes</li>
+                <li>Footer & static content</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- DEVELOPER 4 -->
+        <div class="dev-card">
+          <div class="dev-avatar-wrap">
+            <img src="https://api.dicebear.com/7.x/thumbs/svg?seed=dan&backgroundColor=1a1f2e" alt="Dan" class="dev-avatar"/>
+          </div>
+          <div class="dev-card-body">
+            <h3>Dan Lim</h3>
+            <span class="dev-role-badge backend">JavaScript Developer</span>
+            <p class="dev-desc">
+              Dan handled all core JavaScript logic including the shared app.js, the search overlay, modal
+              search against TMDB, and the score range input interaction. He also performed final testing and
+              debugging across all pages to ensure a smooth user experience.
+            </p>
+            <div class="dev-contributions">
+              <h4>Contributions</h4>
+              <ul>
+                <li>Core app.js shared logic</li>
+                <li>Global search overlay</li>
+                <li>Score slider interaction</li>
+                <li>Cross-page testing & debugging</li>
+                <li>TMDB search in modal</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="roles" class="dev-section">
+      <h2 class="dev-section-title">Role Summary</h2>
+      <div class="roles-table-wrap">
+        <table class="roles-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Primary Files</th>
+              <th>Key Tasks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Alice Reyes</strong></td>
+              <td><span class="dev-role-badge lead sm">Project Lead</span></td>
+              <td class="mono">index.html, style.css</td>
+              <td>UI design, TMDB API, Home page</td>
+            </tr>
+            <tr>
+              <td><strong>Ben Santos</strong></td>
+              <td><span class="dev-role-badge frontend sm">Frontend Dev</span></td>
+              <td class="mono">watchlist.html, watchlist.js</td>
+              <td>Watchlist, filters, modal, storage</td>
+            </tr>
+            <tr>
+              <td><strong>Clara Mendoza</strong></td>
+              <td><span class="dev-role-badge content sm">Content</span></td>
+              <td class="mono">about-project.html, developers.html</td>
+              <td>Documentation, FAQ, CSS fixes</td>
+            </tr>
+            <tr>
+              <td><strong>Dan Lim</strong></td>
+              <td><span class="dev-role-badge backend sm">JS Developer</span></td>
+              <td class="mono">app.js</td>
+              <td>Core JS logic, search, testing</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="contact" class="dev-section">
+      <h2 class="dev-section-title">Contact</h2>
+      <p class="dev-contact-note">For questions or feedback about MyMovieList, feel free to reach out to any of our team members.</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <img src="https://api.dicebear.com/7.x/thumbs/svg?seed=alice&backgroundColor=1a1f2e" alt="Alice"/>
+          <div>
+            <strong>Alice Reyes</strong>
+            <span>alice.reyes@school.edu</span>
+          </div>
+        </div>
+        <div class="contact-card">
+          <img src="https://api.dicebear.com/7.x/thumbs/svg?seed=ben&backgroundColor=1a1f2e" alt="Ben"/>
+          <div>
+            <strong>Ben Santos</strong>
+            <span>ben.santos@school.edu</span>
+          </div>
+        </div>
+        <div class="contact-card">
+          <img src="https://api.dicebear.com/7.x/thumbs/svg?seed=clara&backgroundColor=1a1f2e" alt="Clara"/>
+          <div>
+            <strong>Clara Mendoza</strong>
+            <span>clara.mendoza@school.edu</span>
+          </div>
+        </div>
+        <div class="contact-card">
+          <img src="https://api.dicebear.com/7.x/thumbs/svg?seed=dan&backgroundColor=1a1f2e" alt="Dan"/>
+          <div>
+            <strong>Dan Lim</strong>
+            <span>dan.lim@school.edu</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <p>Data provided by <a href="https://www.themoviedb.org" target="_blank">The Movie Database (TMDB)</a></p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="watchlist.html">My List</a>
+      <a href="about-project.html">About</a>
+      <a href="developers.html">Developers</a>
+    </nav>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.ptab').forEach(tab => {
+      tab.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const target = document.querySelector(tab.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>

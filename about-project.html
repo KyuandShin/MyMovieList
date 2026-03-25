@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About the Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;700&family=Overpass+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">M</span>
+      <span class="logo-text">MyMovieList</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="watchlist.html">My List</a>
+      <a href="about-project.html" class="active">About</a>
+      <a href="developers.html">Developers</a>
+    </div>
+    <div class="nav-right">
+      <div class="avatar-wrap">
+        <img src="https://api.dicebear.com/7.x/thumbs/svg?seed=movie" alt="avatar" class="avatar"/>
+      </div>
+    </div>
+  </nav>
+
+  <div class="profile-banner about-banner">
+    <div class="profile-banner-overlay"></div>
+  </div>
+
+  <div class="profile-identity">
+    <div class="project-logo-big">
+      <span>M</span>
+    </div>
+    <div class="profile-name-block">
+      <h1>MyMovieList</h1>
+      <p class="profile-sub">A movie watchlist management system</p>
+    </div>
+  </div>
+
+  <div class="profile-tabs">
+    <a href="#purpose" class="ptab active">Purpose</a>
+    <a href="#features" class="ptab">Features</a>
+    <a href="#technologies" class="ptab">Technologies</a>
+    <a href="#faq" class="ptab">FAQ</a>
+  </div>
+
+  <div class="about-body">
+    <div class="about-left">
+
+      <section class="about-card" id="purpose">
+        <h2>Purpose of the System</h2>
+        <p>
+          MyMovieList is a web-based movie watchlist management system designed to help movie enthusiasts
+          track, organize, and rate their movie-watching experience. Inspired by platforms like AniList and
+          Letterboxd, it provides a clean and intuitive interface to manage your personal film journey.
+        </p>
+        <p>
+          Whether you're a casual viewer or a dedicated cinephile, MyMovieList helps you keep
+          track of what you're watching, what you've completed, and what you plan to watch next—all
+          powered by live data from The Movie Database (TMDB) API.
+        </p>
+      </section>
+
+      <section class="about-card" id="features">
+        <h2>System Features</h2>
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon">🎬</div>
+            <div>
+              <h4>Movie Search via TMDB API</h4>
+              <p>Search millions of movies using real-time data from The Movie Database. Auto-fill movie details including poster, year, and overview.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">📋</div>
+            <div>
+              <h4>Watchlist Management</h4>
+              <p>Add movies to different lists: Watching, Completed, Paused, Dropped, or Planning. Keep everything organized in one place.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">⭐</div>
+            <div>
+              <h4>Personal Scoring System</h4>
+              <p>Rate movies on a 1–10 scale. Track your mean score and see statistics about your watching habits.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🔍</div>
+            <div>
+              <h4>Filter & Sort</h4>
+              <p>Filter your list by status, genre, and more. Sort by title, score, date added, or release year.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🖼️</div>
+            <div>
+              <h4>Hover Preview</h4>
+              <p>Hover over any movie poster to see a larger preview with overview, score, and quick-add options—just like AniList.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">💾</div>
+            <div>
+              <h4>Local Storage Persistence</h4>
+              <p>Your watchlist is saved locally in your browser. No account required—your data stays with you.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🏠</div>
+            <div>
+              <h4>Trending & Discover</h4>
+              <p>Browse trending movies this week, top-rated films of all time, and what's currently playing in theaters.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">✏️</div>
+            <div>
+              <h4>Edit & Delete Entries</h4>
+              <p>Update your scores, status, notes, or genre at any time. Remove entries you no longer want to track.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-card" id="technologies">
+        <h2>Technologies Used</h2>
+        <div class="tech-stack">
+          <div class="tech-badge">HTML5</div>
+          <div class="tech-badge">CSS3</div>
+          <div class="tech-badge">Vanilla JavaScript</div>
+          <div class="tech-badge">TMDB API</div>
+          <div class="tech-badge">LocalStorage API</div>
+          <div class="tech-badge">Google Fonts</div>
+          <div class="tech-badge">Fetch API</div>
+          <div class="tech-badge">CSS Grid & Flexbox</div>
+          <div class="tech-badge">CSS Custom Properties</div>
+          <div class="tech-badge">DiceBear Avatars</div>
+        </div>
+      </section>
+
+      <section class="about-card" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q">Do I need an account to use MyMovieList?</button>
+            <div class="faq-a">No! Your watchlist is stored directly in your browser's local storage. No sign-up required.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Where does the movie data come from?</button>
+            <div class="faq-a">All movie data (posters, titles, overviews, scores, release dates) is fetched from The Movie Database (TMDB), a community-built movie database with millions of entries.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Will my data be saved if I close the browser?</button>
+            <div class="faq-a">Yes! Everything is saved to your browser's local storage, so your watchlist will persist between sessions on the same device and browser.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Can I add a movie that's not on TMDB?</button>
+            <div class="faq-a">Yes! You can manually type in any title, year, genre, score, and notes without using the TMDB search. The poster will be a placeholder in that case.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">How do I remove a movie from my list?</button>
+            <div class="faq-a">On the watchlist page, hover over any entry row and click the three-dot menu (⋯) on the left. You'll see options to edit or delete the entry.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="about-right">
+      <div class="about-stat-card">
+        <h3>Quick Stats</h3>
+        <div class="about-stat-row">
+          <span>Pages</span><strong>4</strong>
+        </div>
+        <div class="about-stat-row">
+          <span>API Used</span><strong>TMDB</strong>
+        </div>
+        <div class="about-stat-row">
+          <span>Framework</span><strong>Vanilla JS</strong>
+        </div>
+        <div class="about-stat-row">
+          <span>Storage</span><strong>LocalStorage</strong>
+        </div>
+        <div class="about-stat-row">
+          <span>Responsive</span><strong>Yes</strong>
+        </div>
+      </div>
+
+      <div class="about-stat-card">
+        <h3>Movie Status Types</h3>
+        <div class="status-legend">
+          <div class="sl-item"><span class="sl-dot watching"></span> Watching</div>
+          <div class="sl-item"><span class="sl-dot completed"></span> Completed</div>
+          <div class="sl-item"><span class="sl-dot paused"></span> Paused</div>
+          <div class="sl-item"><span class="sl-dot dropped"></span> Dropped</div>
+          <div class="sl-item"><span class="sl-dot planning"></span> Planning</div>
+        </div>
+      </div>
+
+      <div class="about-stat-card">
+        <h3>Inspiration</h3>
+        <p style="color:var(--text-muted);font-size:0.85rem;line-height:1.6;">
+          This project was heavily inspired by <strong style="color:var(--text)">AniList</strong>, the popular anime tracking platform. The dark UI, cover grid layout, hover previews, and sidebar filter design are all adapted from AniList's clean and efficient aesthetic.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Data provided by <a href="https://www.themoviedb.org" target="_blank">The Movie Database (TMDB)</a></p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="watchlist.html">My List</a>
+      <a href="about-project.html">About</a>
+      <a href="developers.html">Developers</a>
+    </nav>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        item.classList.toggle('open');
+      });
+    });
+    document.querySelectorAll('.ptab').forEach(tab => {
+      tab.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const target = document.querySelector(tab.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>

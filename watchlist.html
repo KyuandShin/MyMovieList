@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;700&family=Overpass+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">M</span>
+      <span class="logo-text">MyMovieList</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="watchlist.html" class="active">My List</a>
+      <a href="about-project.html">About</a>
+      <a href="developers.html">Developers</a>
+    </div>
+    <div class="nav-right">
+      <button class="icon-btn" id="searchToggle">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <div class="avatar-wrap">
+        <img src="https://api.dicebear.com/7.x/thumbs/svg?seed=movie" alt="avatar" class="avatar"/>
+      </div>
+    </div>
+  </nav>
+
+  <div class="search-overlay" id="searchOverlay">
+    <input type="text" id="searchInput" placeholder="Search movies…" autocomplete="off"/>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+
+  <div class="watchlist-layout">
+    <aside class="sidebar">
+      <div class="sidebar-search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="listFilter" placeholder="Filter"/>
+      </div>
+
+      <div class="sidebar-group">
+        <p class="sidebar-label">Lists</p>
+        <button class="sidebar-item active" data-status="all">All</button>
+        <button class="sidebar-item" data-status="watching">Watching</button>
+        <button class="sidebar-item" data-status="completed">Completed</button>
+        <button class="sidebar-item" data-status="paused">Paused</button>
+        <button class="sidebar-item" data-status="dropped">Dropped</button>
+        <button class="sidebar-item" data-status="planning">Planning</button>
+      </div>
+
+      <div class="sidebar-group">
+        <p class="sidebar-label">Sort</p>
+        <select class="sidebar-select" id="sortSelect">
+          <option value="title">Title</option>
+          <option value="score">Score</option>
+          <option value="dateAdded">Date Added</option>
+          <option value="year">Year</option>
+        </select>
+      </div>
+
+      <div class="sidebar-group">
+        <p class="sidebar-label">Genre</p>
+        <select class="sidebar-select" id="genreFilter">
+          <option value="">All Genres</option>
+          <option value="Action">Action</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Drama">Drama</option>
+          <option value="Horror">Horror</option>
+          <option value="Sci-Fi">Sci-Fi</option>
+          <option value="Romance">Romance</option>
+          <option value="Thriller">Thriller</option>
+          <option value="Animation">Animation</option>
+          <option value="Documentary">Documentary</option>
+        </select>
+      </div>
+
+      <button class="btn-add-movie" id="openAddModal">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Add Movie
+      </button>
+    </aside>
+
+    <main class="list-main">
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-number" id="statTotal">0</span>
+          <span class="stat-label">Total Movies</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="statCompleted">0</span>
+          <span class="stat-label">Completed</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="statMeanScore">–</span>
+          <span class="stat-label">Mean Score</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="statWatching">0</span>
+          <span class="stat-label">Watching</span>
+        </div>
+      </div>
+
+      <div id="listContent">
+      </div>
+
+      <div class="empty-state" id="emptyState" style="display:none">
+        <div class="empty-icon">🎬</div>
+        <h3>Your list is empty</h3>
+        <p>Start by adding movies from the home page or using the button on the left.</p>
+        <button class="btn-primary" id="emptyAddBtn">Add Your First Movie</button>
+      </div>
+    </main>
+  </div>
+
+  <div class="preview-card" id="previewCard">
+    <img id="previewImg" src="" alt=""/>
+    <div class="preview-info">
+      <h3 id="previewTitle"></h3>
+      <div class="preview-meta">
+        <span class="preview-score" id="previewScore"></span>
+        <span class="preview-year" id="previewYear"></span>
+      </div>
+      <p class="preview-overview" id="previewOverview"></p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Add Movie</h3>
+        <button class="modal-close" id="closeModal">×</button>
+      </div>
+
+      <div class="modal-search-wrap">
+        <input type="text" id="modalMovieSearch" placeholder="Search for a movie to auto-fill…" autocomplete="off"/>
+        <div class="modal-search-results" id="modalSearchResults"></div>
+      </div>
+
+      <div class="modal-form">
+        <input type="hidden" id="editId"/>
+        <input type="hidden" id="moviePoster"/>
+        <input type="hidden" id="movieOverview"/>
+        <input type="hidden" id="movieTmdbId"/>
+
+        <div class="form-row">
+          <label>Title *</label>
+          <input type="text" id="movieTitle" placeholder="Movie title" required/>
+        </div>
+        <div class="form-row">
+          <label>Year</label>
+          <input type="number" id="movieYear" placeholder="e.g. 2024" min="1900" max="2030"/>
+        </div>
+        <div class="form-row">
+          <label>Score (1–10)</label>
+          <div class="score-input-wrap">
+            <input type="range" id="movieScore" min="0" max="10" step="0.5" value="0"/>
+            <span id="scoreDisplay">–</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <label>Status</label>
+          <select id="movieStatus">
+            <option value="watching">Watching</option>
+            <option value="completed">Completed</option>
+            <option value="paused">Paused</option>
+            <option value="dropped">Dropped</option>
+            <option value="planning">Planning</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Genre</label>
+          <select id="movieGenre">
+            <option value="">Select genre</option>
+            <option value="Action">Action</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Drama">Drama</option>
+            <option value="Horror">Horror</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Romance">Romance</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Animation">Animation</option>
+            <option value="Documentary">Documentary</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Notes</label>
+          <textarea id="movieNotes" placeholder="Optional notes…" rows="3"></textarea>
+        </div>
+        <div class="modal-actions">
+          <button class="btn-cancel" id="cancelModal">Cancel</button>
+          <button class="btn-primary" id="saveMovie">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Data provided by <a href="https://www.themoviedb.org" target="_blank">The Movie Database (TMDB)</a></p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="watchlist.html">My List</a>
+      <a href="about-project.html">About</a>
+      <a href="developers.html">Developers</a>
+    </nav>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="watchlist.js"></script>
+</body>
+</html>
