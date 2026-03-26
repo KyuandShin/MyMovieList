@@ -1125,7 +1125,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   .stats-bar { flex-wrap: wrap; gap: 1rem; }
 }
 
-.movie-banner {
+    .movie-banner {
       position: relative;
       height: 280px;
       overflow: hidden;
