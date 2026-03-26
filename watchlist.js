@@ -1,7 +1,3 @@
-// =====================================================
-// MyMovieList – Watchlist Page Logic (watchlist.js)
-// =====================================================
-
 document.addEventListener('DOMContentLoaded', function () {
 
   // ---- State ----
