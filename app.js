@@ -11,7 +11,7 @@ function saveWatchlist(list) {
   localStorage.setItem('mml_watchlist', JSON.stringify(list));
 }
 
-// TMDB fetch helper
+// TMDB API Fetching
 async function tmdbFetch(endpoint, params = {}) {
   const url = new URL(`${TMDB_BASE}${endpoint}`);
   url.searchParams.set('api_key', TMDB_KEY);
